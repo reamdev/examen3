@@ -1,0 +1,23 @@
+extends default
+
+block content
+  div(class='container' style='margin-top: 40px;')
+    h2 Create New User
+    form(action='/client/new' method="POST", style='height: 60vh; display: flex; flex-direction: column; justify-content: space-between;')
+      div(class='form-group')
+        label(for='name') Name
+        input(type='text' class='form-control' id='name' name='name' aria-describedby='nameHelp' placeholder='Enter name', required)
+        small(id='nameHelp' class='form-text text-muted') Enter client name
+      div(class='form-group')
+        label(for='email') Email
+        input(type='email' class='form-control' id='email' name='email' aria-describedby='emailHelp' placeholder='Enter email', required)
+        small(id='emailHelp' class='form-text text-muted') Enter client email
+      div(class='form-group')
+        label(for='direction') Direction
+        input(type='text' class='form-control' id='direction' name='direction' aria-describedby='directionHelp' placeholder='Enter direction')
+        small(id='directionHelp' class='form-text text-muted') Enter client direction
+      div(class='form-group')
+        label(for='phone') Phone Number
+        input(type='phone' class='form-control' id='phone' name='phone' aria-describedby='phoneHelp' placeholder='985 253 524')
+        small(id='phoneHelp' class='form-text text-muted') Enter client phone number
+      button(class='btn btn-success' type='submit') Save

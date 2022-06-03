@@ -1,0 +1,26 @@
+extends default
+
+block content
+  div(style='margin: 20px 0;')
+    a(class='btn btn-success' href='/client/create') Create New User
+  div(class='table-responsive')
+    table(class='table table-striped table-dark')
+      thead
+        tr
+          th(scope='col') ID
+          th(scope='col') Name
+          th(scope='col') Email
+          th(scope='col') Direction
+          th(scope='col') Phone
+          th(scope='col') Options
+      tbody
+        each client in clients
+          tr
+            th(scope='row')= client.id
+            td= client.name
+            td= client.email
+            td= client.direction
+            td= client.phone
+            td(class='text-center')
+              a(class='btn btn-warning' href='/client/edit?id='+client.id) Editar
+              a(class='btn btn-danger' href='/client/remove?id='+client.id) Eliminar
