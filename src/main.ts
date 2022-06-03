@@ -9,6 +9,7 @@ const app = express()
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
+app.set('port', process.env.PORT || 8000)
 
 // Middlewares
 app.use(morgan('dev'))
@@ -22,6 +23,6 @@ void connectDB()
 app.use(router)
 app.use('/client', clientRouter)
 
-app.listen(8000, () => {
-  console.log('Server is running on port 8000')
+app.listen(app.get('port'), () => {
+  console.log('Server is running on port ', app.get('port'))
 })
